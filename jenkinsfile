@@ -9,7 +9,7 @@ pipeline {
         stage('Deploy VPC') {
             steps {
                 script {
-                    sh "aws cloudformation create-stack --stack-name ameer-datbrick-vpc-stack --template-body file://aws-vpc.yaml --parameters ParameterKey=VpcCidrBlock,ParameterValue=${params.VPC_CIDR}"
+                    sh "aws cloudformation create-stack --stack-name ameer-datbrick-vpc-stack --template-body file://aws-vpc.yaml --parameters ParameterKey=VpcCidrBlock,ParameterValue=${params.VPC_CIDR} --region 'us-east-1a'"
                 }
             }
         }
