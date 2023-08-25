@@ -11,7 +11,7 @@ pipeline {
                 script {
                     withCredentials([string(credentialsId: 'aamir-awscli-ygrusr2', variable: 'AWS_ACCESS_KEY_ID'),
                                  string(credentialsId: 'secretkey-awscli-ygrusr2', variable: 'AWS_SECRET_ACCESS_KEY')]){
-                    sh "aws cloudformation update-stack --stack-name ameer-datbrick-vpc-stack --template-body file://aws-vpc.yaml --parameters ParameterKey=VpcCidrBlock,ParameterValue=${params.VPC_CIDR} --region 'ap-south-1'"
+                    sh "aws cloudformation create-stack --stack-name ameer-datbrick-vpc-stack --template-body file://aws-vpc.yaml --parameters ParameterKey=VpcCidrBlock,ParameterValue=${params.VPC_CIDR} --region 'ap-south-1'"
                 }
             }
         }
