@@ -19,7 +19,7 @@ Resources:
     Properties:
       VpcId: !Ref MyVPC
       CidrBlock: !Ref VpcCidrBlock
-      AvailabilityZone: us-east-1a
+      AvailabilityZone: ap-south-1
 
 Outputs:
   VpcId:
